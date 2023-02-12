@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const user = "karnika";
+      const getSleepHours = (day) => {
+        switch (day) {
+          case "Monday":
+            return 8;
+
+          case "Tuesday":
+            return 7;
+
+          case "Wednessday":
+            return 7;
+
+          case "Thursday":
+            return 7;
+
+          case "Friday":
+            return 8;
+
+          case "Saturday":
+            return 9;
+
+          case "Sunday":
+            return 9;
+
+          default:
+            return "Invalid day";
+        }
+      };
+      console.log(getSleepHours("Tuesday"));
+
+      const getActualSleepHours = () => {
+        return (
+          getSleepHours("Monday") +
+          getSleepHours("Tuesday") +
+          getSleepHours("Wednessday") +
+          getSleepHours("Thursday") +
+          getSleepHours("Friday") +
+          getSleepHours("Saturday") +
+          getSleepHours("Sunday")
+        );
+      };
+      console.log(getActualSleepHours());
+
+      const getIdealSleepHours = () => {
+        var idealHours = 9;
+        return idealHours * 7;
+      };
+      console.log(getIdealSleepHours());
+
+      const calculateSleepDebt = () => {
+        const actualSleepHours = getActualSleepHours();
+        const idealSleepHours = getIdealSleepHours();
+
+        if (actualSleepHours === idealSleepHours) {
+          console.log("You got the perfect amount of sleep.");
+        } else if (actualSleepHours > idealSleepHours) {
+          console.log("You got more sleep than needed.");
+        } else {
+          console.log(
+            "You got " +
+              (idealSleepHours - actualSleepHours) +
+              " hour(s) less sleep than you needed this week. Get some rest."
+          );
+        }
+      };
+      calculateSleepDebt();
+    </script>
+  </body>
+</html>
